@@ -1,0 +1,29 @@
+
+<div id="MenuBack" class="container-fluid">
+      <div class="row  float-left clearfix">
+         <nav class="navbar navbar-default navbar-fixed-top" id="menu">
+              <a  class="col text-nowrap" [routerLink]="['/about']" [routerLinkActive]="['actived']">Inicio</a>
+              <div class="vl"></div>
+            <a class="col text-nowrap" [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyectos</a>
+        </nav>
+      </div>
+
+      <div class="row  float-right clearfix">
+          <nav class="navbar navbar-default navbar-fixed-top">
+              <div id="create" class="container">
+               <a *ngIf="status=='success'" class="col text-nowrap" [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']" ><img src="../../../assets/img/Crear.png" style="width:30px;"></a>
+              </div>
+               <div class="vl" style="float:right;"></div>
+               <a data-toggle="dropdown" ><img src="../../../assets/img/login1.png" style="width:30px;float:right;" id="Cursor"> </a>
+            <div id="menuDesplegable" class="container">
+               <ul class="dropdown-menu" id="Desplegable" role="menu">
+                  <li><a *ngIf="status!='success'" [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a></li>
+                  <li><a *ngIf="status=='success'" class="col text-nowrap" [routerLink]="['/mis-proyectos']" [routerLinkActive]="['actived']">Mis Proyectos</a></li>
+                  <li  *ngIf="status=='success'" class="divider"></li>
+                  <li><a *ngIf="status=='success'" class="col text-nowrap" [routerLink]="['/login']" [routerLinkActive]="['actived']">Panel De Control</a></li>
+                </ul>
+             </div>   
+            
+         </nav>
+       </div>
+</div>

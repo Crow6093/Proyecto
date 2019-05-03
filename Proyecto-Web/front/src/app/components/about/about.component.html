@@ -1,0 +1,130 @@
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+
+<div class="container-fluid"  style="background:rgb(228, 225, 210);">
+  <!-- primer apartado -->
+  <div class="row" style="background:rgb(228, 225, 210);">
+      <div class="col-xs-12 col-xl-12">
+          <img src="../../../assets/img/fondo2.png" alt="" id="ImagenFondo1">
+      </div>
+          <div class="col-xs-12 col-xl-12">
+         <app-menu></app-menu>
+         </div>
+    <div class="col-xs-12 col-xl-12">
+      <h1>Proyectos<br/>
+          Activos</h1>
+           <div  class="col-md-4 col-xl-3  col-xs-1 hidden-sm-down" style="position: relative; float:right; margin-right: 10%; bottom: 37%; width: 45%; height: 5%;" >
+            <div class="d-none d-md-block d-lg-none d-none d-lg-block d-xl-none d-none d-xl-block" *ngIf="Status != 'success'">
+            <app-register></app-register>
+            </div>
+            <div class="d-block d-sm-none d-none d-sm-block d-md-none" *ngIf="Status != 'success'">
+              <div class="col-sm-12" style="margin-top: 40%;">
+              <app-register></app-register>
+            </div>
+              </div>
+          </div>
+     </div>
+     <!-- imagen para anclas -->
+
+     <a href="#seccion1"  class="d-none d-lg-block d-xl-none d-none d-xl-block" style="position:absolute; z-index:1; margin-left: 50%; margin-top: 45%;"><img   src="../../../assets/img/flecha-derecha.png" class="img-responsive" id="Scroll" style="position:absolute; z-index:1;"></a>
+
+   </div>
+    <!-- Segudo apartado -->
+   <div class="row" style="margin-top:25%">
+        <div class="col-xs-12 col-xl-12" >
+            <img src="../../../assets/img/fondo6.png" alt="" class="padding"  id="ImagenFondo1"> 
+        </div>
+       <p></p>
+      <div class="col-xs-12 col-xl-12" id="paddinTexto2">
+          <a name="seccion1" type="hidden" style="position:absolute; margin-top:40%;"></a>
+      <h2 class="conlinea" name="seccion1">Sube Tus Proyectos Hoy</h2>
+      <p>Aqui podras subir tus proyecto, podran ser valorados por otro usuarios<br/>
+        y los mas valorados saldran en esta web principal</p>
+       
+      <p>Cuando subas un proyecto podras verlo como una "card",si el proyecto es publico <br/>
+      Recuerda que cualquiera podrá verlo y acceder a sus ficheros<br/>
+      No olvides Puntuar Los Proyectos de otros usuarios...<br/>
+      Esto puede ser muy ultil para distinguir rapidamente proyectos muy buenos.. <br/>
+      <br/>
+      Todos los proyectos aqui alojados podran ser visitados en cualquier momento <br/>
+       solo inicia sesión <a [routerLink]="['/login']"> Aquí</a> 
+
+      </p>
+      <img src="../../../assets/img/card.jpg" class="float-right" style="margin-top:-10%;width: 30%; height: 15%;">
+    </div>
+     <!-- imagen para anclas -->
+     <a href="#seccion2"  class="d-none d-lg-block d-xl-none d-none d-xl-block" style="position:absolute; z-index:1; margin-left: 48%; margin-top: 57%;"><img   src="../../../assets/img/flecha-derecha.png"  id="Scroll1"></a>
+    </div>
+     <div class="container-fluid">
+ 
+            <img src="../../../assets/img/fondo41.png" alt="" class="paddingultimafoto" id="ImagenFondo3">
+     
+     </div>
+
+      <div class="col-xs-12 col-xl-12 col-xs-push-4" id="parte3">
+          <a name="seccion2" type="hidden" style="position:absolute; margin-top:41%;"></a>
+     <h1 class="ultimoh1">Este proyecto Podria ser el tuyo..</h1>
+     <p>Proyectos más Valorados</p>
+      </div>
+
+     <div *ngIf="projects" class="container">
+              <div id="carousel2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+
+                  <ol class="carousel-indicators">
+                    <li *ngIf="projects[0]" data-target="#carousel2" data-slide-to="0" class="active"></li>
+                    <li *ngIf="projects[1]" data-target="#carousel2" data-slide-to="1"></li>
+                    <li *ngIf="projects[2]" data-target="#carousel2" data-slide-to="2"></li>
+                  </ol>
+              <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+              <div class="view" *ngIf="projects[0]">
+                  <a [routerLink]="['/proyecto', projects[0]._id]">
+                  <img class="d-block w-100 img-thumbnail"  style="z-index:1;"src="{{url+'get-image/'+projects[0].image}}"   class="ng-star-inserted" alt="First slide"></a>
+                  <div class="mask rgba-black-light"></div>
+              </div>
+              <div class="carousel-caption" *ngIf="projects[0]">
+                <h3 class="h3-responsive"  id="PPorjets">{{projects[0].name}}</h3>
+                 <p  id="PPorjets">{{projects[0].category}} - {{projects[0].visibility}} - {{projects[0].year}}</p>
+              </div>
+            </div>
+             <div class="carousel-item"  *ngIf="projects[1]">
+
+             <div class="view" *ngIf="projects[1]">
+                <a [routerLink]="['/proyecto', projects[1]._id]">
+                <img class="d-block w-100 img-thumbnail"  style="z-index:1;" src="{{url+'get-image/'+projects[1].image}}"  class="ng-star-inserted" alt="Second slide"></a>
+                <div class="mask rgba-black-light"></div>
+              </div>
+              <div class="carousel-caption" *ngIf="projects[1]" >
+                <h3 class="h3-responsive"  id="PPorjets" >{{projects[1].name}}</h3>
+                <p  id="PPorjets">{{projects[1].category}} - {{projects[1].visibility}} - {{projects[1].year}}</p>
+              </div>
+              </div>
+              <div class="carousel-item"  *ngIf="projects[2]">
+              <div class="view" *ngIf="projects[2]">
+                 <a [routerLink]="['/proyecto', projects[2]._id]">
+                 <img class="d-block w-100 img-thumbnail " style="z-index:1;" src="{{url+'get-image/'+projects[2].image}}" class="ng-star-inserted" alt="Third slide"></a>
+                 <div class="mask rgba-black-light"></div>
+              </div>
+              <div class="carousel-caption" *ngIf="projects[2]">
+                <h3 class="h3-responsive"  id="PPorjets">{{projects[2].name}}</h3>
+                <p  id="PPorjets">{{projects[2].category}} - {{projects[2].visibility}} - {{projects[2].year}}</p>
+              </div>
+              </div>
+              </div>
+                      
+         <a *ngIf="projects[1]" class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="sr-only">Anterior</span>
+         </a>
+         <a  *ngIf="projects[1]" class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Siguente</span>
+         </a>
+    </div> 
+    </div>  
+  
+  </div>

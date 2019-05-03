@@ -1,0 +1,80 @@
+
+<div class="container-fluid col-xs-12 col-md-12 col-lg-12">
+      <app-menu id="MenuTofront"></app-menu>
+      <img src="../../../assets/img/fondo7.png" alt="" class="padding"  id="ImagenFondo1">
+</div>    
+
+<div class="containerFrom">   
+    <div class="form-style-5 col-xs-8 col-md-8 col-lg-8 " id="Formfront" >
+   <!-- <h2>{{title}}</h2> -->
+  
+ 
+   <div class="alert alert-success" *ngIf="status == 'success'">
+        El proyecto Se ha creo correctamente , puedes <a [routerLink]="['/mis-proyectos']"> verlo aqui</a>
+   </div>
+   
+   <div class="alert alert-danger" *ngIf="status == 'filed'">
+          El proyecto No se ha podido crear
+    </div>
+<div class="col-md-12 col-lg-12">
+      <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+          <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+            <span class="alert alert-danger" *ngIf="name.touched && !name.valid">El Nombre Es Obligatorio</span>
+          </p>
+          <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span class="alert alert-danger" *ngIf="description.touched && !description.valid">La Descripción Es Obligatoria</span>
+          </p>
+          <p>
+            <label for="category">Categoria</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"  pattern="^[a-zA-Z ]*$" required/>
+            <span class="alert alert-danger" *ngIf="category.touched && !category.valid">La Categoria Es Obligatoria</span>
+          </p>
+          <p>
+            <label for="year">Año de Creación</label>
+            <input type="number" max='2019' name="year" #year="ngModel" [(ngModel)]="project.year" pattern="^[0-9][0-9][0-9][0-9]" required/>
+            <span class="alert alert-danger" *ngIf="year.touched && !year.valid">El Año de Creación Es Obligatorio</span>
+          </p>
+          <p>
+            <label for="langs">Lenguajes Utilizados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required/>
+              <span class="alert alert-danger" *ngIf="langs.touched && !langs.valid">Debes Especificar los Lenguajes usados</span>
+          </p>
+          <p>
+            <label for="email">Creador</label>
+            <input type="email" id='email' name="email" #email="ngModel" [(ngModel)]="project.email" disabled />
+            <script>document.getElementById('email').vale=UserEmail</script>
+          </p>
+          <p>
+            <label for="visibility">Visibilidad</label>
+            <select name="visibility" #visibility="ngModel" [(ngModel)]="project.visibility">
+                <option value="Privado">Privado</option>
+                <option value="Publico">Publico</option>
+            </select>
+          </p>
+          <p>
+            <label for="image">Imagen del Proyecto(/*.png /*.jpg)</label>
+            <input type="file" name="images" placeholder="Subir Imagen" (change)="fileChangeEvent($event)"/>
+          </p>
+          <p>
+            <label for="file">Archivo del Proyecto(/*.zip /*.rar)</label>
+            <input type="file" name="file" placeholder="Subir Archivo" (change)="fileChangeEventFile($event)"/>
+          </p>
+
+          <input type="submit" name="" class="btn btn-outline-primary" value="Subir Proyecto" [disabled]="!projectForm.form.valid"/>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- <div class="imgFrom" *ngIf="Loginstatus=='success'">
+  <img src="../../../assets/img/from.png" alt="Logo Formulario">
+
+</div> -->
+<!-- <div class="container" *ngIf="Loginstatus!='success'">
+    <h2>{{title}}</h2>
+    <a [routerLink]="['/login']" [routerLinkActive]="['actived']" >
+    <img src="../../../assets/img/login.png" id='needlogin' alt="Need Login"></a>
+</div> -->

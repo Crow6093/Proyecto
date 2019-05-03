@@ -1,0 +1,100 @@
+html{
+  background:rgb(228, 225, 210);
+}
+/* puntuacion */
+.rating {
+  float:left;
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    /* padding:0 .1em; */
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    /* line-height:1.2; */
+    color:black;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: gold;
+    
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: gold;
+    
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+div.row-center{
+  float: right;
+}
+div #row-center{
+  float: right;
+}
+#row-center-block{
+  float: right;
+  visibility: hidden;
+}
+
+/* stars */
+#stars{
+  width: 15%;
+  height: 7%;
+}
+#starsP{
+  width: 30%;
+  height: 15%;
+}
+/* erro 404 */
+div.Error404{
+  display:block;
+  width: 80%;
+  height: 60%;
+  margin: 0px auto;
+  border-radius: 50px;
+}
+#Error404{
+  width: 100%;
+  height: 100%;
+}
+#ErrorMessage{
+  display: block;
+  font-size: 30px;
+  color:gray;
+  margin-left: 45%;
+  margin-bottom: 50px;
+}
+/* MEDIA QUERIS */
+@media screen and (max-width: 800px) {
+  body{
+    background-color: black;
+  }
+ }

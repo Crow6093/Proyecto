@@ -1,0 +1,34 @@
+<div class="col-xs-6 col-md-8 col-lg-4">
+  <div class="alert alert-success" *ngIf="status == 'success'">
+       Has editado Tu información Correctamente
+  </div>
+  <div class="alert alert-danger" *ngIf="status == 'filed'">
+    Lo sentimos , no has podido Editar Tu información
+   </div>
+     <form #UserForm="ngForm" (ngSubmit)="onSubmit(UserForm)">
+         <label>
+           <p class="label-txt" for="email">Email</p>
+           <input type="text"  name="email" #email="ngModel" [(ngModel)]="user.email" disabled/>
+           <div class="line-box">
+              <div class="line"></div>
+            </div>
+         </label>
+         <label>
+           <p class="label-txt" for="name">Nombre</p>
+           <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" pattern="^[a-zA-Z ]*$" required/>
+           <div class="line-box">
+              <div class="line"></div>
+              <span class="alert alert-danger" style="font-size: 10px;" *ngIf="name.touched && !name.valid">Debes Especificar Un Nombre Válido</span>
+            </div>
+         </label>
+         <label>
+           <p class="label-txt" for="password">Contraseña</p>
+           <input type="password"  name="password" #password="ngModel" [(ngModel)]="user.password" required/>
+           <div class="line-box">
+              <div class="line"></div>
+              <span class="alert alert-danger" style="font-size: 10px;" *ngIf="password.touched && !password.valid">Debes Especificar una Contraseña Válida</span>
+            </div>
+         </label>
+         <button type="submit" name="" class="" [disabled]="!UserForm.form.valid">Editar</button>
+     </form>
+</div>

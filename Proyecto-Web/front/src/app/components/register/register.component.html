@@ -1,0 +1,39 @@
+<div class="hidden-xs">
+
+  <div class="alert alert-success" *ngIf="status == 'success'">
+       Te has registrado Correctamente <a [routerLink]="['/login']">Loguear Ahora</a>
+  </div>
+  
+  <div class="alert alert-danger" *ngIf="status == 'filed'">
+    Lo sentimos , no has podido Registrarte
+   </div>
+
+     <form #UserForm="ngForm" (ngSubmit)="onSubmit(UserForm)">
+         <label>
+           <p class="label-txt" for="email">Email</p>
+           <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required/>
+           <!-- <span class="form_error" *ngIf="email.touched && !email.valid">El Correo Es Obligatorio</span> -->
+           <div class="line-box">
+              <div class="line"></div>
+            </div>
+         </label>
+         <label>
+           <p class="label-txt" for="name">Nombre</p>
+           <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" pattern="^[a-zA-Z ]*$" required/>
+           <!-- <span class="form_error" *ngIf="name.touched && !name.valid">El nombre es obligatorio</span> -->
+           <div class="line-box">
+              <div class="line"></div>
+            </div>
+         </label>
+         <label>
+           <p class="label-txt" for="password">Contraseña</p>
+           <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" required/>
+           <!-- <span class="form_error" *ngIf="password.touched && !password.valid">La Contraseña Es obligatoria</span> -->
+           <div class="line-box">
+              <div class="line"></div>
+            </div>
+         </label>
+         <button type="submit" name="" class="" [disabled]="!UserForm.form.valid">Registrarme</button>
+     
+     </form>
+</div>

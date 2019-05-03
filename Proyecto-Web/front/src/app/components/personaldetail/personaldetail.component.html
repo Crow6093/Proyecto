@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <app-menu></app-menu>
+    <div class="col-xs-12 col-xl-12">
+        <img src="../../../assets/img/FondoparBottom.png" alt="" class="position-fixed" id="ImagenFondo1">
+        <img src="../../../assets/img/fondo3.png" alt="" class="position-fixed" id="ImagenFondo0">
+     </div>
+</div>
+<div class="containerNew" id="Formfront" *ngIf="project">
+    <div id="titles">
+    <h2>{{project.name}}<h6 *ngIf="project.NumberOfAssessments!=0"> 
+      <img id="stars" *ngIf="project.TotalAssessments >=1 && project.TotalAssessments <1.5" src="../../../assets/img/Starts/1.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=1.5 && project.TotalAssessments <2" src="../../../assets/img/Starts/1-5.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=2 && project.TotalAssessments <2.5" src="../../../assets/img/Starts/2.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=2.5 && project.TotalAssessments <3" src="../../../assets/img/Starts/2-5.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=3 && project.TotalAssessments <3.5" src="../../../assets/img/Starts/3.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=3.5 && project.TotalAssessments <4" src="../../../assets/img/Starts/3-5.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=4 && project.TotalAssessments <4.5" src="../../../assets/img/Starts/4.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=4.5 && project.TotalAssessments <5" src="../../../assets/img/Starts/4-5.png" alt="">
+      <img id="stars" *ngIf="project.TotalAssessments >=5" src="../../../assets/img/Starts/5.png" alt="">
+      -> Con {{project.NumberOfAssessments}} Botos</h6>
+      </h2>
+    </div>
+      <div class="image">
+          <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/>
+      </div>
+        <div id="data">
+          <h2>Datos:</h2>
+          <h6>Categoria: {{project.category}} </h6>
+          <h6>Visibilidad : {{project.visibility}}</h6>
+          <h6>Año de creación: {{project.year}}</h6>
+          <h2>Descripción:</h2>
+          <p>{{project.description}}</p>
+          <h2>Lenguajes usados:</h2>
+          <p>{{project.langs}}</p>
+          <div *ngIf="project.file != null">
+          <h2>Ficheros:</h2>
+          <p class="btn btn-outline-warning"><a href="{{url+'get-file/'+project.file}}">Descargar</a></p>
+          <p class="btn btn-outline-warning" (click)="qr()" style="color:#007bff;">Compartir QR</p> 
+          <ngx-qrcode qrc-element-type="url" id="qr" [qrc-value] = "url+'get-file/'+project.file"></ngx-qrcode>
+          </div>
+          <h2>Ajustes:</h2>
+          <div class="botones" *ngIf="confirm == false">
+            <a [routerLink]="['/editar-proyecto',project._id]" class="btn btn-outline-primary">Editar</a>
+            <a (click)="setConfirm(true)" class="btn btn-outline-danger">Borrar</a>
+          </div>
+          <div class="botones" *ngIf="confirm == true">
+             <div class="alert alert-danger">¿Estas Seguro de que quieres Eliminarlo?</div>
+            <a (click)="setConfirm(false)"  class="btn btn-outline-primary">Cancelar</a>
+    
+            <a (click)="deleteProject(project._id)" class="btn btn-outline-danger">Eliminar</a>
+          </div>
+        </div>
+    </div>
+    

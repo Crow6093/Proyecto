@@ -1,0 +1,81 @@
+
+    .project a {
+        text-decoration: none;
+    }
+    h3{
+        font-size: 24px;
+    }
+    .card .ProjectImage{
+        width: 45%;
+        height: 45%;
+    }
+    .card {
+        flex-direction:initial;
+        margin-top: 20px;
+            width: inherit;
+            height: inherit;
+    }
+    #starsP{
+        width: 90px;
+        height: 30px;
+    }
+    
+    #paginador{
+        margin-top:20px;
+        background: transparent;
+        text-decoration: black;
+        z-index:1;
+        position:absolute;
+    }
+    
+
+/*  parte del menu */
+
+a{
+    text-decoration: none;
+    color:rgb(228, 225, 210);
+    padding: 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+
+}
+
+#MenuBack{
+    width: 100%;
+    height: 60px;
+    background-color:rgba(0, 0, 0,0.4);
+}
+
+.vl {
+    border-left: 1px solid rgb(228, 225, 210);
+    height: 30px;
+  }
+
+  #menu{
+      width: 100%;
+   
+  }
+  #ImagenFondo1{
+    position:absolute;
+    z-index:0;
+    margin: 0% auto;
+    margin-left: -27px;
+    margin-top: 20%;
+    width: 100%;
+}
+.card[_ngcontent-c1] {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+img .ProjectImage {
+ clip:rect(0 100px 100px 0);
+position:absolute;}
+
+#paginador{
+    margin-top: 20px;
+    background: transparent;
+    -webkit-text-decoration: black;
+    text-decoration: black;
+    z-index: 1;
+    position: static;
+}

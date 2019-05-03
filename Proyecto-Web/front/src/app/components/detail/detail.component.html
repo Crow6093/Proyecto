@@ -1,0 +1,54 @@
+<div class="container-fluid"> 
+        <app-menu></app-menu>
+        <div class="col-xs-12 col-xl-12">
+                <img src="../../../assets/img/FondoparBottom.png" alt="" class="position-fixed" id="ImagenFondo1">
+                <img src="../../../assets/img/fondo3.png" alt="" class="position-fixed" id="ImagenFondo0">
+         </div>
+</div>
+<div class="containerNew" id="Formfront" *ngIf="project">
+    <div id="titles">
+        <h2>{{project.name}}<h6>(*Autor: {{project.email}} )</h6>
+          <h6 *ngIf="project.TotalAssessments >=1"> 
+              <img id="stars" *ngIf="project.TotalAssessments >=1 && project.TotalAssessments <1.5" src="../../../assets/img/Starts/1.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=1.5 && project.TotalAssessments <2" src="../../../assets/img/Starts/1-5.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=2 && project.TotalAssessments <2.5" src="../../../assets/img/Starts/2.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=2.5 && project.TotalAssessments <3" src="../../../assets/img/Starts/2-5.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=3 && project.TotalAssessments <3.5" src="../../../assets/img/Starts/3.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=3.5 && project.TotalAssessments <4" src="../../../assets/img/Starts/3-5.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=4 && project.TotalAssessments <4.5" src="../../../assets/img/Starts/4.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=4.5 && project.TotalAssessments <5" src="../../../assets/img/Starts/4-5.png" alt="">
+              <img id="stars" *ngIf="project.TotalAssessments >=5" src="../../../assets/img/Starts/5.png" alt="">
+               * ({{project.NumberOfAssessments}} Votos)</h6></h2>
+    </div>
+        <div class="image">
+            <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/>
+        </div>
+<div *ngIf="!VotedUserLocal">
+        <div class="row-center" style="margin-right: 17%;" *ngIf="UserMail!='no email' && UserMail!=project.email">
+              
+              <div class="rating" id='row-center'>
+                    Puntúa Este proyecto (*1 Minimo  *5 Maximo)<br/>
+                  <input type="radio" id="star5" name="rating" (click)="onClickMe(5)" value="5" /><label for="star5" title="5 Estrellas">5 stars</label>
+                  <input type="radio" id="star4" name="rating" (click)="onClickMe(4)"value="4" /><label for="star4" title="4 Estrellas">4 stars</label>
+                  <input type="radio" id="star3" name="rating" (click)="onClickMe(3)"value="3" /><label for="star3" title="3 Estrellas">3 stars</label>
+                  <input type="radio" id="star2" name="rating" (click)="onClickMe(2)"value="2" /><label for="star2" title="2 Estrellas">2 stars</label>
+                  <input type="radio" id="star1" name="rating" (click)="onClickMe(1)" value="1" /><label for="star1" title="1 Estrella">1 star</label>
+                </div>
+          </div>
+  </div>
+        <div id="data">
+        <h2>Datos:</h2>
+        <h6>Categoria: {{project.category}} </h6>
+        <h6>Visibilidad : {{project.visibility}}</h6>
+        <h6>Año de creación: {{project.year}}</h6>
+        <h2>Descripción:</h2>
+        <p>{{project.description}}</p>
+        <h2>Lenguajes usados:</h2>
+        <p>{{project.langs}}</p>
+        <div *ngIf="project.file != null">
+            <h2>Ficheros:</h2>
+            <p class="btn btn-outline-warning"><a href="{{url+'get-file/'+project.file}}">Descargar</a></p>
+            </div>
+      </div>
+      </div>
+      

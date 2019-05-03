@@ -1,0 +1,105 @@
+
+#ImagenFondo3{
+    position:absolute;
+    z-index:1;
+    margin: 0% auto;
+    margin-left: -30px;
+    width: 100%;
+}
+.container{
+    z-index:1;
+}
+
+#Tofront{
+    position:absolute;
+    z-index:1;
+    margin: 0% auto;
+    margin-left: 20%;
+}
+#ImagenFondo1{
+    position:absolute;
+    z-index:0;
+    margin: 0% auto;
+    margin-left: -30px;
+    margin-top: -3%;
+    width: 100%;
+    position: fixed;
+}
+#panel{
+    display: inline;
+    margin-left: -2%;
+}
+
+#panel a{
+    margin-left: 2%;
+}
+
+
+/* partemenu login*/
+.signupSection {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 450px;
+  text-align: center;
+  display: flex;
+  color: white;
+ 
+}
+
+.signupForm {
+  width: 70%;
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: .2s;
+  margin: 0px auto;
+
+}
+
+.inputFields {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid rgb(226, 226, 226);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, .2);
+  color: white;
+  outline: none;
+  background:transparent;
+}
+ input{
+    background:transparent;
+ }
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+}
+
+#join-btn {
+  border: 1px solid rgb(226, 226, 226);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+}
+.Edit{
+  display: none;
+ width: 100%;
+}
+.EditV{
+  display: hidden;
+}
+.containerPanel{
+  width: 80%;
+  height: 90%;
+  padding-left: 15%;
+  padding-top: 10%;
+}
