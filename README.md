@@ -10,7 +10,7 @@ Requerimentos:
     
  Requiere instalar MongoDb:
     -https://www.mongodb.com/download-center/community
-    -*Aconsejable Instalar Robo 3T:
+    -Aconsejable Instalar Robo 3T:
         -https://robomongo.org/download
         
  Requiere Crear Una Base de Datos en MongoDb:
