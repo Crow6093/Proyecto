@@ -18,4 +18,4 @@ Require instalar NodeJS:
   
 Ejecutar Servidores:
     -Servidor NodeJs : Abrir Terminal en la carpeta BACK y Utilizar el siguiente comando: npm start
-    -Servidor Angular: Abrir Terminal en la carpeta FRONT Y Utilizar el siguiente comando: ng serve
+    -Servidor Angular: Abrir Terminal en la carpeta FRONT Y Utilizar el siguiente comando: ng serve -o
