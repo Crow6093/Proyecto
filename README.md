@@ -3,7 +3,7 @@ Proyecto Final
 Requerimentos:
 
 Require instalar NodeJS:
-    -https://nodejs.org/es/download/
+    -[https://nodejs.org/es/download/](https://nodejs.org/en/download)
     
  Requiere instalar angular/Cli:
     -npm install -g @angular/cli
