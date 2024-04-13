@@ -1,4 +1,4 @@
-# ProyectoFinal
+# Proyecto
 Proyecto Final 
 Requerimentos:
 
